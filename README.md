@@ -58,7 +58,7 @@ Intercept (b0): 150.00
 Slope (b1): 3.57
 Predicted Sales for Advertising = 55: 346.43
 
-Learning Outcomes
+📌 Learning Outcomes
 Apply linear regression to real-world data
 
 Understand and implement OLS algorithm
@@ -67,6 +67,17 @@ Use Python classes to structure machine learning code
 
 Interpret regression coefficients and predictions
 
+📚 References
+Displayr - What is Linear Regression?
+
+University Course: Intelligence of Data Classification
+
+🧑‍🎓 Author
+DiegoPalma 
+
+Student of Informatics Engineering
+
+University of Gudalajara
 
 
 
