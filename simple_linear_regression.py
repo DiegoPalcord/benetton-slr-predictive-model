@@ -1,3 +1,6 @@
+from tabulate import tabulate
+import matplotlib.pyplot as plt
+
 class SimpleLinearRegression:
     def __init__(self, x, y):
         self.x = x
@@ -39,3 +42,27 @@ print(f"Slope (b1): {b1:.2f}")
 ad_value = 55
 predicted_sales = model.predict(ad_value)
 print(f"Predicted Sales for Advertising = {ad_value}: {predicted_sales:.2f}")
+
+# Table of predictions
+table_data = []
+for i in range(len(advertising)):
+    pred = model.predict(advertising[i])
+    table_data.append([advertising[i], sales[i], round(pred, 2)])
+
+print("\n📊 Comparison Table: Real vs Predicted Sales")
+print(tabulate(table_data, headers=["Advertising (€M)", "Real Sales (€M)", "Predicted Sales (€M)"], tablefmt="github"))
+
+# 📈 Plot
+predicted_all = [model.predict(x) for x in advertising]
+
+plt.figure(figsize=(8, 5))
+plt.scatter(advertising, sales, color='blue', label='Actual Sales')
+plt.plot(advertising, predicted_all, color='red', linestyle='--', label='Regression Line')
+plt.title("Simple Linear Regression - Benetton Case")
+plt.xlabel("Advertising (€ Million)")
+plt.ylabel("Sales (€ Million)")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
